@@ -1,0 +1,28 @@
+<div style="text-align: center">
+	<%= link_to 'Homepage', general_homepage_path %>
+	<%= link_to 'New Entry', new_entry_path %>
+</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<table cellpadding=10>
+						<tr>
+							<th colspan="1">Title:</th>
+							<th>Description</th>
+							<th colspan="3"></th>
+						</tr>
+					
+						<% @entries.each do |entry| %>
+						<tr>
+							<td><%= entry.title %></td>
+							<td><%= entry.writing %></td>
+							<td><%= link_to 'Show', entries_path(entry) %></td>
+							<td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+							<td><%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?'} %> </td>
+						</tr>
+						<% end %>
+				</table>
+				
+			</div>
+		</div>
+	</div>

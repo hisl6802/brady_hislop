@@ -1,0 +1,16 @@
+
+<div class="col-md-12" style="text-align: center">
+	<h1>Brady Hislop</h1>
+	<%= link_to "Daily Writing's", controller:'entries' %>
+	<%= link_to 'New Entry', new_entry_path %>
+
+	<div class="col-md-12" style="text-align: center">
+
+			<% @entries.each do |entry| %>
+				<h2><%= entry.title %></h2>
+				<p><%= entry.writing %></p>
+			<% end %>
+	</div>
+
+	
+</div>
